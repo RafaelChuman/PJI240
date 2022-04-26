@@ -18,7 +18,7 @@
     Nome_Cliente, Telefone (WhatsApp), Descrição do Produto e Valor.
     Agrupar os dados por cliente - (Total).
     O Intúito dessa tela é demosntrar dados para que o Administrador entre em Ctt com o cliente para vender mais produtos.
-
+ 
 
 ID,categoria, Nome
 1,1,Desodorante

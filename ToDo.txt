@@ -6,7 +6,7 @@
 
 Migrations..... (create migration criação do banco de dados) :
 {
-
+ 
 }
 
 

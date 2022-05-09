@@ -1,0 +1,25 @@
+{
+  "name": "pji240",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000P\u0000J\u0000I\u00002\u00004\u00000\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelChuman/PJI240.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelChuman/PJI240/issues"
+  },
+  "homepage": "https://github.com/RafaelChuman/PJI240#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-generator": "^4.16.1"
+  }
+}

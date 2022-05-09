@@ -1,0 +1,66 @@
+-------------------- .dockerignore
+
+node_modules
+.git
+.vscode
+
+-------------------- dockerfile
+
+FROM node
+
+WORKDIR /usr/app
+
+COPY package.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3333
+
+CMD ['npm", "run", "dev"]
+
+---------------docker-compose.yml
+
+
+version: "3.7"
+
+services:
+	database_pg:
+		image: postgres
+		container_name: database_pji240
+		restart: always
+		ports:
+			- 5432:5432
+		environments:
+			- POSTGRES.USER = docker
+			- POSTGRES.PASSWORD = test
+			- POSTGRES.DB = pji240
+		voumes:
+			- pgdata:/data/postgres
+	app:
+		biuld: .
+		container_name: pji240
+		ports:
+			- 3333:3333
+		volumes:
+			- .:/usr/app
+volumes:
+	pgdata:
+		driver:local
+
+--------------------------------
+
+docker build -t pji240
+
+docker run -p 3333:3333 pji240
+
+docker ps
+
+docer exec -id ID /bin/bash
+
+docker-compose up
+
+docker-compose up -d
+
+docker logs pji240 -f

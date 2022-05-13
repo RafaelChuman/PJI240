@@ -1,0 +1,13 @@
+docker build -t pji240
+
+docker run -p 3333:3333 pji240
+
+docker ps
+
+docer exec -id ID /bin/bash
+
+docker-compose up
+
+docker-compose up -d
+
+docker logs pji240 -f

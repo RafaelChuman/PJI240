@@ -7,7 +7,7 @@ export class CreateUser1652238152394 implements MigrationInterface {
         await queryRunner.createTable(
             new Table(
                 {
-                    name:"User",
+                    name:"user",
                     columns: [
                         {
                             name: "id",
@@ -15,11 +15,11 @@ export class CreateUser1652238152394 implements MigrationInterface {
                             isPrimary: true,
                         },
                         {
-                            name: "firstname",
+                            name: "firstName",
                             type: "varchar",
                         },
                         {
-                            name: "lastname",
+                            name: "lastName",
                             type: "varchar",
                         },
                         {
@@ -32,10 +32,10 @@ export class CreateUser1652238152394 implements MigrationInterface {
         );
 
         await queryRunner.createIndex(
-            "User",
+            "user",
             new TableIndex({
                 name: "IDX_USER_NAME",
-                columnNames: ["firstname"],
+                columnNames: ["firstName"],
             })
         );
     }
@@ -43,9 +43,9 @@ export class CreateUser1652238152394 implements MigrationInterface {
     public async down(queryRunner: QueryRunner): Promise<void> {
     
     
-        await queryRunner.dropIndex("User", "IDX_USER_NAME");
+        await queryRunner.dropIndex("user", "IDX_USER_NAME");
         
-        await queryRunner.dropTable("User");
+        await queryRunner.dropTable("user");
 
     }
 

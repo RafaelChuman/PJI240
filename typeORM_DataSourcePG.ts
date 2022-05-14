@@ -1,9 +1,9 @@
 import { DataSource } from "typeorm";
 
-export const AppDataSource = new DataSource({
+export const PostgresDataSource = new DataSource({
     migrationsTableName: 'migrations',
     type: "postgres",
-    host: "localhost",
+    host: "pg_pji240",
     port: 5432,
     username: "docker",
     password: "test",
@@ -16,7 +16,7 @@ export const AppDataSource = new DataSource({
 })
 
 
-AppDataSource.initialize()
+PostgresDataSource.initialize()
     .then(() => {
         console.log("Data Source has been initialized!")
     })

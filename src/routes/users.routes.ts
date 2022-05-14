@@ -1,9 +1,12 @@
 import { Router } from "express";
+import createUserController from "../modules/users/createUser";
+import listUserController from "../modules/users/listUser";
 
-import listUserController from "modules/users/listUser";
-import createUserController from "modules/users/createUser";
 
 const usersRoutes = Router();
+
+
+console.log("Routes Reinitialized");
 
 usersRoutes.post("/", (request, response) =>
   createUserController().handle(request, response)

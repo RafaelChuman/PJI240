@@ -1,7 +1,7 @@
 {
     "openapi":"3.0.0.0",
-    "title":"Rocketseat Swagger",
-    "description":"Documentação para o Desafio 5 Swagger",
+    "title":"PJI240 Swagger",
+    "description":"Documentação para o PJI240",
     "version":"0.0.1",
     "contact":{
         "name":"Rafael Chuman Santana",

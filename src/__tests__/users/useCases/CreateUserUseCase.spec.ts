@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../../database/entity/Users/UsersRepository";
+import { UsersRepository } from "../../../entity/Users/UsersRepository";
 import { CreateUserUseCase } from "../../../modules/users/createUser/CreateUserUseCase";
 
 describe("CreateUserUseCase", () => {

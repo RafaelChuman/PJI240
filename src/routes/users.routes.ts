@@ -1,12 +1,9 @@
-import { Router } from "express";
+import { response, Router } from "express";
 import createUserController from "../modules/users/createUser";
 import listUserController from "../modules/users/listUser";
 
 
 const usersRoutes = Router();
-
-
-console.log("Routes Reinitialized");
 
 usersRoutes.post("/", (request, response) =>
   createUserController().handle(request, response)
@@ -15,5 +12,7 @@ usersRoutes.post("/", (request, response) =>
 usersRoutes.get("/", (request, response) =>
   listUserController().handle(request, response)
 );
+
+
 
 export { usersRoutes };

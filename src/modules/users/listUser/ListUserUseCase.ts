@@ -1,8 +1,5 @@
-
-import { IUsersRepository, ICreateUserDTO } from "database/entity/Users/IUsersRepository";
-import { User } from "database/entity/Users/User";
-import { response } from "express";
-
+import { IUsersRepository, ICreateUserDTO } from "entity/Users/IUsersRepository";
+import { User } from "entity/Users/User";
 
 
 class ListUserUseCase {

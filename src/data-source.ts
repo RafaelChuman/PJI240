@@ -1,18 +1,21 @@
+import { Products } from "entity/products/Products";
+import { User } from "entity/Users/User";
 import { DataSource } from "typeorm";
 
 export const PostgresDataSource = new DataSource({
-    migrationsTableName: 'migrations',
+    migrationsTableName: 'migrations-prod',
     type: "postgres",
-    host: "pg_pji240",
+    host: "localhost",
     port: 5432,
     username: "docker",
     password: "test",
     database: "pji240",
-    logging: false,
-    synchronize: false,
     name: 'default',
-    entities: ["./src/database/entity/**/*.ts"],
-    migrations: ["./src/database/migration/*.ts"]
+    entities: [Products, User],
+    migrations: [],
+    migrationsRun: true,
+    migrationsTransactionMode: "all",
+    synchronize:true
 })
 
 

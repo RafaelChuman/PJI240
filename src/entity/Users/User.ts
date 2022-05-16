@@ -8,10 +8,28 @@ export class User {
     id: string
 
     @Column()
-    firstName: string
+    name: string
 
     @Column()
-    lastName: string
+    userName: string
+
+    @Column()
+    password: string
+
+    @Column()
+    cep: string
+
+    @Column()
+    numberAddress: string
+
+    @Column()
+    cellphone: string
+
+    @Column()
+    whatsApp: string
+
+    @Column()
+    isAdmin: boolean
 
     @CreateDateColumn()
     created_at: Date
@@ -20,6 +38,7 @@ export class User {
         if(!this.id)
         {
             this.id = uuidV4();
+            this.isAdmin = false;
         }
     }
 

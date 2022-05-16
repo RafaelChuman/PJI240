@@ -1,6 +1,6 @@
 import { validate } from "uuid";
 
-import { UsersRepository } from "../../../database/entity/Users/UsersRepository";
+import { UsersRepository } from "../../../entity/Users/UsersRepository";
 
 describe("UsersRepository", () => {
   let usersRepository: UsersRepository;

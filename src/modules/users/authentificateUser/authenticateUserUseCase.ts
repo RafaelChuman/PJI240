@@ -1,6 +1,6 @@
 import { compare } from "bcrypt";
-import { IUsersRepository, IAuthenticateUserDTO, IUserTokenDTO } from "entity/Users/IUsersRepository";
-import { AppError } from "errors/AppError";
+import { IUsersRepository, IAuthenticateUserDTO, IUserTokenDTO } from "@entity/Users/IUsersRepository";
+import { AppError } from "@errors/AppError";
 import { sign } from "jsonwebtoken";
 
 

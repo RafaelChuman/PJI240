@@ -5,7 +5,7 @@ export class CreateProducts1652586552409 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
 
         const newProductTableOptions = {
-            name:"products",
+            name:"Products",
             columns: [
                 {
                     name: "id",
@@ -48,7 +48,7 @@ export class CreateProducts1652586552409 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
 
-        await queryRunner.dropTable("products");
+        await queryRunner.dropTable("Products");
     }
 
 }

@@ -1,8 +1,8 @@
 
-import { IUsersRepository, ICreateUserDTO } from "entity/Users/IUsersRepository";
-import { User } from "entity/Users/User";
+import { IUsersRepository, ICreateUserDTO } from "@entity/Users/IUsersRepository";
+import { User } from "@entity/Users/User";
 import { hash } from "bcrypt";
-import { AppError } from "errors/AppError";
+import { AppError } from "@errors/AppError";
 
 
 
@@ -13,7 +13,7 @@ class CreateUserUseCase {
 
     const userNameAlredyExist = await this.usersRepository.findByUserName(data.userName);
 
-    if(userNameAlredyExist === undefined)
+    if(userNameAlredyExist === null)
     {    
       const passwordHash = await hash(data.password, 8);
 

@@ -1,4 +1,4 @@
-import { Products } from "entity/products/Products";
+import { Products } from "@entity/products/Products";
 import { Response, Request } from "express";
 import { ListProductUseCase } from "./listProductUseCase";
 

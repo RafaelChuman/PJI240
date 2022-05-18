@@ -1,28 +1,36 @@
-import { Products } from "entity/products/Products";
-import { User } from "entity/Users/User";
+import { Products } from "./entity/products/Products";
+import { User } from "./entity/Users/User";
 import { DataSource } from "typeorm";
 
-export const PostgresDataSource = new DataSource({
-    migrationsTableName: 'migrations-prod',
+export const PostgresDS = new DataSource({
+    //migrationsTableName: 'migrations-prod',
     type: "postgres",
     host: "localhost",
     port: 5432,
     username: "docker",
     password: "test",
     database: "pji240",
-    name: 'default',
+    name: "default",
     entities: [Products, User],
-    migrations: [],
-    migrationsRun: true,
-    migrationsTransactionMode: "all",
-    synchronize:true
+    migrations: ["*.m.ts"],
+    //migrationsRun: false,
+    //migrationsTransactionMode: "all",
+    //synchronize:false
 })
 
 
-PostgresDataSource.initialize()
+PostgresDS.initialize()
     .then(() => {
-        console.log("Data Source has been initialized!")
+
+        console.log(PostgresDS.options.migrations)
+        console.log(PostgresDS.migrations.length)
+
+        console.log("Database Initialized");
     })
-    .catch((err) => {
-        console.error("Error during Data Source initialization", err)
-    })
+    .catch((error) => console.log(error))
+
+
+ 
+
+
+ 

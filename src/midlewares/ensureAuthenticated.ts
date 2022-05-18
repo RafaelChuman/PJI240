@@ -1,5 +1,5 @@
-import { UsersRepository } from "entity/Users/UsersRepository";
-import { AppError } from "errors/AppError";
+import { UsersRepository } from "@entity/Users/UsersRepository";
+import { AppError } from "@errors/AppError";
 import {NextFunction, Request, Response} from "express";
 import { verify } from "jsonwebtoken";
 

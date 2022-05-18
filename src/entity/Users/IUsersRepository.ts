@@ -25,7 +25,7 @@ interface IUserTokenDTO{
 
 interface IUsersRepository {
   create(data: ICreateUserDTO): Promise<User>;
-  findByUserName(userName: string): Promise<User> | Promise<undefined>;
+  findByUserName(userName: string): Promise<User | null>;
   // findByEmail(email: string): User | undefined;
   // turnAdmin(user: User): User;
   list(): Promise<User[]>;

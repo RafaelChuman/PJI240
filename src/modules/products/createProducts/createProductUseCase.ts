@@ -1,6 +1,6 @@
 
-import { IProductsRepository, ICreateProductDTO } from "entity/products/IProductsRepository";
-import { Products } from "entity/products/Products";
+import { IProductsRepository, ICreateProductDTO } from "@entity/products/IProductsRepository";
+import { Products } from "@entity/products/Products";
 
 
 

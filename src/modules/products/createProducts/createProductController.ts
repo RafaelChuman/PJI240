@@ -1,4 +1,4 @@
-import { ICreateProductDTO } from "entity/products/IProductsRepository";
+import { ICreateProductDTO } from "@entity/products/IProductsRepository";
 import { Response, Request } from "express";
 import { CreateProductUseCase } from "./createProductUseCase";
 

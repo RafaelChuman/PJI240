@@ -1,5 +1,5 @@
 
-import { PostgresDataSource } from "../../data-source";
+import { PostgresDS } from "@src/data-source";
 import { IUsersRepository, ICreateUserDTO } from "./IUsersRepository";
 import { User } from "./User";
 
@@ -17,25 +17,23 @@ class UsersRepository implements IUsersRepository {
     user.cellphone = data.cellphone;
     user.whatsApp = data.whatsApp;
     
-    await PostgresDataSource.manager.save(user);
+    await PostgresDS.manager.save(user);
 
     return user;
   }
 
   async list(): Promise<User[]> {
-    const users = await PostgresDataSource.manager.find(User);
+
+    const users = await PostgresDS.manager.find(User);
     
     return users;
   }
 
-  async findByUserName(userNameParm: string): Promise<User> {
+  async findByUserName(userNameParm: string): Promise<User | null> {
 
-    const user =  await PostgresDataSource.manager.findOneBy(User, {
+    const user = await PostgresDS.manager.findOneBy(User, {
       userName: userNameParm
     } );
-
-    if(user === null)
-      return undefined;
     
     return user;
   }

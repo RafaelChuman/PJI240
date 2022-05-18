@@ -1,5 +1,5 @@
 
-import { PostgresDataSource } from "../../data-source";
+import { PostgresDS } from "@src/data-source";
 import { IProductsRepository, ICreateProductDTO } from "./IProductsRepository";
 import { Products } from "./Products";
 
@@ -17,13 +17,13 @@ class ProductRepository implements IProductsRepository{
     product.quantity = data.quantity;
     product.value = data.value;
     
-    await PostgresDataSource.manager.save(product);
+    await PostgresDS.manager.save(product);
 
     return product;
   }
 
   async list(): Promise<Products[]> {
-    const products = await PostgresDataSource.manager.find(Products);
+    const products = await PostgresDS.manager.find(Products);
     
     return products;
   }

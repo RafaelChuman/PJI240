@@ -1,5 +1,5 @@
-import { Products } from "entity/products/Products";
-import { ProductRepository } from "entity/products/ProductsRepository";
+import { Products } from "@entity/products/Products";
+import { ProductRepository } from "@entity/products/ProductsRepository";
 
 
 

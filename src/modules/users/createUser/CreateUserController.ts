@@ -1,4 +1,4 @@
-import { ICreateUserDTO } from "entity/Users/IUsersRepository";
+import { ICreateUserDTO } from "@entity/Users/IUsersRepository";
 import { Response, Request } from "express";
 
 import { CreateUserUseCase } from "./CreateUserUseCase";

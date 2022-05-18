@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../../entity/Users/UsersRepository";
+import { UsersRepository } from "@entity/Users/UsersRepository";
 import { AuthenticateUserController } from "./authenticateUserCotroller";
 import { AuthenticaUserUseCase } from "./authenticateUserUseCase";
 

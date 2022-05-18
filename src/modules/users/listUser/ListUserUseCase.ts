@@ -1,5 +1,5 @@
-import { IUsersRepository, ICreateUserDTO } from "entity/Users/IUsersRepository";
-import { User } from "entity/Users/User";
+import { IUsersRepository, ICreateUserDTO } from "@entity/Users/IUsersRepository";
+import { User } from "@entity/Users/User";
 
 
 class ListUserUseCase {

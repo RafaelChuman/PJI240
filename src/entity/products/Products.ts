@@ -2,7 +2,7 @@
 import { v4 as uuidV4 } from "uuid";
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, PrimaryColumn} from "typeorm";
 
-@Entity()
+@Entity("Products")
 export class Products {
 
     @PrimaryColumn()

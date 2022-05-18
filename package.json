@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "proc": "ts-node src/server.ts",
     "lint:fix": "eslint --fix . --ext ts,tsx",
     "test": "jest",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:show -d src/data-source.ts",
-    "migrate": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts"
+    "migrate": "typeorm migration:run",
+    "migrate2": "typeorm migration:run -d src/data-source.ts",
+
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

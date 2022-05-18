@@ -1,4 +1,4 @@
-import { ProductRepository } from "../../../entity/products/ProductsRepository";
+import { ProductRepository } from "@entity/products/ProductsRepository";
 import { ListProductController } from "./listProductsController";
 import { ListProductUseCase } from "./listProductUseCase";
 

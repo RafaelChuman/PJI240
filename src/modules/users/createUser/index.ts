@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../../entity/Users/UsersRepository";
+import { UsersRepository } from "@entity/Users/UsersRepository";
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 

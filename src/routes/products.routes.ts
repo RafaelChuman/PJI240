@@ -1,14 +1,14 @@
 import { Router } from "express";
-import listProductsController from "../modules/products/listProducts";
-import createProductsController from "../modules/products/createProducts";
-import { ensureAuthenticated } from "midlewares/ensureAuthenticated";
+import listProductsController from "@modules/products/listProducts";
+import createProductsController from "@modules/products/createProducts";
+import { ensureAuthenticated } from "@midlewares/ensureAuthenticated";
 import multer from "multer";
-import upload from "config/upload";
+import {uploadFile} from "@config/fileManager";
 
 
 const productsRoutes = Router();
 
-const uploadPhoto = multer(upload.upload("./tmp/Products"))
+const uploadPhoto = multer(uploadFile("./tmp/Products"))
 
 productsRoutes.use(ensureAuthenticated);
 

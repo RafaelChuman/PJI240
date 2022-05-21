@@ -1,6 +1,7 @@
 import { Products } from "./entity/products/Products";
-import { User } from "./entity/Users/User";
+import { Users } from "./entity/Users/Users";
 import { DataSource } from "typeorm";
+import { Categories } from "./entity/categories/categories";
 
 export const PostgresDS = new DataSource({
     //migrationsTableName: 'migrations-prod',
@@ -11,7 +12,7 @@ export const PostgresDS = new DataSource({
     password: "test",
     database: "pji240",
     name: "default",
-    entities: [Products, User],
+    entities: [Products, Users, Categories],
     migrations: ["*.m.ts"],
     //migrationsRun: false,
     //migrationsTransactionMode: "all",

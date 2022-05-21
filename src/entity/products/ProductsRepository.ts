@@ -10,12 +10,13 @@ class ProductRepository implements IProductsRepository{
     const product = new Products();
 
     
-    product.category = data.category;
-    product.name = data.name;
-    product.numberStocke = data.numberStocke;
-    product.image = data.image;
-    product.quantity = data.quantity;
-    product.value = data.value;
+    product.categoriesId =  data.categoriesId;
+    product.name =          data.name;
+    product.numberStocke =  data.numberStocke;
+    product.image =         data.image;
+    product.quantityUnit =  data.quantityUnit;
+    product.quantityValue=  data.quantityValue;
+    product.value =         data.value;
     
     await PostgresDS.manager.save(product);
 
@@ -24,7 +25,7 @@ class ProductRepository implements IProductsRepository{
 
   async list(): Promise<Products[]> {
     const products = await PostgresDS.manager.find(Products);
-    
+
     return products;
   }
 }

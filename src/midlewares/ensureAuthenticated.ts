@@ -6,23 +6,26 @@ import { verify } from "jsonwebtoken";
 export async function ensureAuthenticated(request: Request, response: Response, next: NextFunction) {
     
     //Bearer dkdfvmdlkfvmkdm
-    const authHeader = request.headers.authorization;
+    const token = request.headers.authorization;
 
-    if(!authHeader)
+    if(!token)
     {
         throw new AppError("Token Missing", 401);
     }
 
-    const[, token] = authHeader.split(" ");
-
     try{        
         const decoded = verify(token, "brasil123");
 
-        const userName = decoded.sub.toString();
+        if(!decoded.sub)
+        {
+            throw new  AppError("User does not exist.", 401)
+        }
+
+        const userId = decoded.sub.toString();
 
         const userRespository = new UsersRepository();
         
-        const user = await userRespository.findByUserName(userName);
+        const user = await userRespository.findById(userId);
 
         if(!user){
             throw new  AppError("User does not exist.", 401)

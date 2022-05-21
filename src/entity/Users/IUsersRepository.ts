@@ -1,4 +1,4 @@
-import { User } from "./User";
+import { Users } from "./Users";
 
 interface ICreateUserDTO {
   name: string;
@@ -24,11 +24,12 @@ interface IUserTokenDTO{
 }
 
 interface IUsersRepository {
-  create(data: ICreateUserDTO): Promise<User>;
-  findByUserName(userName: string): Promise<User | null>;
+  create(data: ICreateUserDTO): Promise<Users>;
+  findByUserName(userName: string): Promise<Users | null>;
   // findByEmail(email: string): User | undefined;
   // turnAdmin(user: User): User;
-  list(): Promise<User[]>;
+  list(): Promise<Users[]>;
+  findById(IdParm: string): Promise<Users | null>;
 }
 
 export { IUsersRepository, ICreateUserDTO, IAuthenticateUserDTO, IUserTokenDTO };

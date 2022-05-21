@@ -1,13 +1,13 @@
 
 import { PostgresDS } from "@src/data-source";
 import { IUsersRepository, ICreateUserDTO } from "./IUsersRepository";
-import { User } from "./User";
+import { Users } from "./Users";
 
 class UsersRepository implements IUsersRepository {
 
-  async create(data: ICreateUserDTO): Promise<User> {
+  async create(data: ICreateUserDTO): Promise<Users> {
 
-    const user = new User();
+    const user = new Users();
 
     user.name = data.name;
     user.userName = data.userName;
@@ -22,17 +22,26 @@ class UsersRepository implements IUsersRepository {
     return user;
   }
 
-  async list(): Promise<User[]> {
+  async list(): Promise<Users[]> {
 
-    const users = await PostgresDS.manager.find(User);
+    const users = await PostgresDS.manager.find(Users);
     
     return users;
   }
 
-  async findByUserName(userNameParm: string): Promise<User | null> {
+  async findByUserName(userNameParm: string): Promise<Users | null> {
 
-    const user = await PostgresDS.manager.findOneBy(User, {
+    const user = await PostgresDS.manager.findOneBy(Users, {
       userName: userNameParm
+    } );
+    
+    return user;
+  }
+
+  async findById(IdParm: string): Promise<Users | null> {
+
+    const user = await PostgresDS.manager.findOneBy(Users, {
+      id: IdParm
     } );
     
     return user;

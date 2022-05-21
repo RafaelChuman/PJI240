@@ -1,11 +1,12 @@
 import { Products } from "./Products";
 
 interface ICreateProductDTO {
-  category: string;
+  categoriesId: string;
   name:string;
   numberStocke:number;
   image:string;
-  quantity:number;
+  quantityValue:number;
+  quantityUnit:string,
   value:number;
 }
 

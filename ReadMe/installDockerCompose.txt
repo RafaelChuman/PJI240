@@ -12,8 +12,8 @@ cd C:\Users\Admin\Downloads
 
 Add-AppxPackage .\ubuntu-2004.appx
 
-wsl --list --runing
+wsl --list --running
 
 wsl --list --online
 
-wdl --install --distribution Debian
+wsl --install --distribution Debian

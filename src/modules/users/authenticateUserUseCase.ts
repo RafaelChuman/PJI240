@@ -1,21 +1,19 @@
 import { compare } from "bcrypt";
-import { IUsersRepository, IAuthenticateUserDTO, IUserTokenDTO } from "@entity/Users/IUsersRepository";
+import { IUserTokenDTO } from "@entity/Users/IUsersRepository";
 import { AppError } from "@errors/AppError";
 import { sign } from "jsonwebtoken";
+import { Response, Request } from "express";
+import { UsersRepository } from "@src/entity/Users/UsersRepository";
 
 
 class AuthenticaUserUseCase{
-    private userRespository: IUsersRepository;
 
-    constructor(userRespository: IUsersRepository){
-        this.userRespository = userRespository;
-    }
+    async execute(request:Request, response:Response):Promise<Response>{
 
-    async execute({userName, password}:IAuthenticateUserDTO):Promise<IUserTokenDTO>{
+        const userRespository = new UsersRepository();
+        const {userName, password} = request.body;
 
-
-
-        const user = await this.userRespository.findByUserName(userName);
+        const user = await userRespository.findByUserName(userName);
 
         if(!user){
             throw new AppError("User or password inconrrect.")
@@ -33,7 +31,7 @@ class AuthenticaUserUseCase{
             expiresIn: "1d"
         })
 
-        const response: IUserTokenDTO = {
+        const resp: IUserTokenDTO = {
             user:{
                 userName: user.userName,
                 password: user.password,
@@ -41,7 +39,7 @@ class AuthenticaUserUseCase{
             token: token,
         };
        
-        return response;
+        return response.status(200).json(resp);
 
     }
 }

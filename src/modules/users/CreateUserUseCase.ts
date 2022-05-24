@@ -1,9 +1,9 @@
 
-import { ICreateUserDTO } from "@entity/Users/IUsersRepository";
 import { hash } from "bcrypt";
 import { AppError } from "@errors/AppError";
-import { UsersRepository } from "@src/entity/Users/UsersRepository";
 import { Response, Request } from "express";
+import { ICreateUserDTO } from "@src/entity/users/IUsersRepository";
+import { UsersRepository } from "@src/entity/users/UsersRepository";
 
 
 

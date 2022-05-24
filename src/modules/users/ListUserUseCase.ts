@@ -1,4 +1,4 @@
-import { UsersRepository } from "@src/entity/Users/UsersRepository";
+import { UsersRepository } from "@src/entity/users/UsersRepository";
 import { Response, Request } from "express";
 
 

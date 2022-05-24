@@ -72,7 +72,7 @@ export class CreateProducts1653072096255 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
 
-        await queryRunner.dropForeignKey("Products", "FK_PRODUCTS_CATEGORIESID")
+        await queryRunner.dropForeignKey("Products", "FK_PRODUCTS_CATEGORIESID");
 
         await queryRunner.dropIndex("Products", "IDX_PRODUCTS_NAME");
 

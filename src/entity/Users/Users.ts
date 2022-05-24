@@ -1,5 +1,6 @@
 import { v4 as uuidV4 } from "uuid";
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, PrimaryColumn} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, Column, PrimaryColumn, ManyToOne, OneToMany} from "typeorm";
+import { Treatments } from "@entity/treatments/Treatments";
 
 @Entity("Users")
 export class Users {
@@ -33,6 +34,9 @@ export class Users {
 
     @CreateDateColumn()
     created_at: Date
+
+    @OneToMany(()=>Treatments, treatments => treatments.usersId)
+    treatments: Treatments[];
 
     constructor(){
         if(!this.id)

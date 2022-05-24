@@ -1,9 +1,9 @@
 import { compare } from "bcrypt";
-import { IUserTokenDTO } from "@entity/Users/IUsersRepository";
 import { AppError } from "@errors/AppError";
 import { sign } from "jsonwebtoken";
 import { Response, Request } from "express";
-import { UsersRepository } from "@src/entity/Users/UsersRepository";
+import { UsersRepository } from "@src/entity/users/UsersRepository";
+import { IUserTokenDTO } from "@src/entity/users/IUsersRepository";
 
 
 class AuthenticaUserUseCase{
@@ -28,7 +28,7 @@ class AuthenticaUserUseCase{
 
         const token = sign({}, "brasil123", {
             subject: user.id,
-            expiresIn: "1d"
+            expiresIn: "1d"            
         })
 
         const resp: IUserTokenDTO = {

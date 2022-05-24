@@ -7,6 +7,7 @@ import { ListUserUseCase } from "./ListUserUseCase";
 const listUserUseCase = new ListUserUseCase()
 const authenticaUserUseCase = new AuthenticaUserUseCase();
 const createUserUseCase = new CreateUserUseCase();
+
 export{
     listUserUseCase, 
     authenticaUserUseCase,

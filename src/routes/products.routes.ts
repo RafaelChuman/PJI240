@@ -3,6 +3,7 @@ import { ensureAuthenticated } from "@midlewares/ensureAuthenticated";
 import multer from "multer";
 import {uploadFile} from "@config/fileManager";
 import { createProductUseCase, listProductUseCase } from "@src/modules/products";
+import { ensureIsAdmin } from "@src/midlewares/ensureIsAdmin";
 
 
 const productsRoutes = Router();
@@ -10,7 +11,7 @@ const productsRoutes = Router();
 const uploadPhoto = multer(uploadFile("./tmp/Products"))
 
 
-productsRoutes.post("/", ensureAuthenticated, (request, response) =>
+productsRoutes.post("/", ensureIsAdmin, (request, response) =>
   createProductUseCase.execute(request, response)
 );
 

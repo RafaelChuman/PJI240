@@ -2,7 +2,7 @@ import request from "supertest";
 import { v4 } from "uuid";
 
 import { app } from "../index";
-import { UsersRepository } from "../entity/Users/UsersRepository";
+import { UsersRepository } from "../entity/users/UsersRepository";
 
 describe("[POST] /users", () => {
   it("should be able to create new users", async () => {

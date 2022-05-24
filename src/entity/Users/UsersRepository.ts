@@ -1,6 +1,6 @@
 
 import { PostgresDS } from "@src/data-source";
-import { IUsersRepository, ICreateUserDTO } from "./IUsersRepository";
+import { ICreateUserDTO, IUsersRepository } from "./IUsersRepository";
 import { Users } from "./Users";
 
 class UsersRepository implements IUsersRepository {

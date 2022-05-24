@@ -1,5 +1,5 @@
-import { UsersRepository } from "@entity/Users/UsersRepository";
 import { AppError } from "@errors/AppError";
+import { UsersRepository } from "@src/entity/users/UsersRepository";
 import {NextFunction, Request, Response} from "express";
 import { verify } from "jsonwebtoken";
 
@@ -30,6 +30,13 @@ export async function ensureAuthenticated(request: Request, response: Response, 
         if(!user){
             throw new  AppError("User does not exist.", 401)
         }
+
+        //Trow the user Paramrs to the next function. So after the validation midleware
+        //We don't need to ask to the database for the datas of ho is logged
+        //We have this problem because the Token only pass the ID and nothing more
+        request.headers.userId =   user.id.toString();
+        request.headers.userName = user.userName.toString();
+        request.headers.isAdmin =  user.isAdmin.toString(); 
 
         next();
     }catch{

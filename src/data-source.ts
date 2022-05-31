@@ -7,7 +7,7 @@ import { Treatments } from "@entity/treatments/Treatments";
 export const PostgresDS = new DataSource({
     //migrationsTableName: 'migrations-prod',
     type: "postgres",
-    host: "localhost",
+    host: "pg_pji240",
     port: 5432,
     username: "docker",
     password: "test",

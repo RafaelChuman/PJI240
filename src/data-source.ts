@@ -15,6 +15,7 @@ export const PostgresDS = new DataSource({
     name: "default",
     entities: [Products, Users, Categories, Treatments],
     migrations: ["*.m.ts"],
+    ssl:{rejectUnauthorized:false}
     //migrationsRun: false,
     //migrationsTransactionMode: "all",
     //synchronize:false

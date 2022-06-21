@@ -1,4 +1,5 @@
 import express from "express";
+import cors from 'cors';
 
 import { usersRoutes } from "@routes/users.routes";
 import { productsRoutes } from "@routes/products.routes";
@@ -8,6 +9,8 @@ import { treatmentsRoutes } from "./routes/treatments.routes";
 import { ensureAuthenticated } from "./midlewares/ensureAuthenticated";
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

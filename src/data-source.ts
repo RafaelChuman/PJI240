@@ -1,5 +1,5 @@
 import { Products } from "@entity/products/Products";
-import { Users } from "@src/entity/users/Users";
+import { Users } from "@src/entity/Users/Users";
 import { DataSource } from "typeorm";
 import { Categories } from "@entity/categories/categories";
 import { Treatments } from "@entity/treatments/Treatments";

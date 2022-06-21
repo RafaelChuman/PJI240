@@ -2,8 +2,8 @@
 import { hash } from "bcrypt";
 import { AppError } from "@errors/AppError";
 import { Response, Request } from "express";
-import { ICreateUserDTO } from "@src/entity/users/IUsersRepository";
-import { UsersRepository } from "@src/entity/users/UsersRepository";
+import { ICreateUserDTO } from "@src/entity/Users/IUsersRepository";
+import { UsersRepository } from "@src/entity/Users/UsersRepository";
 
 
 

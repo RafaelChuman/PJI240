@@ -2,8 +2,8 @@ import { compare } from "bcrypt";
 import { AppError } from "@errors/AppError";
 import { sign } from "jsonwebtoken";
 import { Response, Request } from "express";
-import { UsersRepository } from "@src/entity/users/UsersRepository";
-import { IUserTokenDTO } from "@src/entity/users/IUsersRepository";
+import { UsersRepository } from "@src/entity/Users/UsersRepository";
+import { IUserTokenDTO } from "@src/entity/Users/IUsersRepository";
 
 
 class AuthenticaUserUseCase{

@@ -1,7 +1,7 @@
 import { usersRoutes } from "@src/routes/users.routes";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import {v4 as uuidv4} from "uuid";
-import { Users } from "@src/entity/users/Users";
+import { Users } from "@src/entity/Users/Users";
 import { Products } from "@entity/products/Products";
 
 

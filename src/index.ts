@@ -7,9 +7,6 @@ import { categoriesRoutes } from "@routes/categories.routes";
 import { treatmentsRoutes } from "./routes/treatments.routes";
 import { ensureAuthenticated } from "./midlewares/ensureAuthenticated";
 
-
-console.log(`Refreshed:  ${Date.now()}`)
-
 const app = express();
 
 app.use(express.json());

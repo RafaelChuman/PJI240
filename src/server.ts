@@ -16,7 +16,11 @@ app.use(
     })
 })
 
-app.listen(3333, () => console.log("Server is running!"));
+
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 
 

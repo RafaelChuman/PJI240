@@ -14,6 +14,9 @@ usersRoutes.get("/", (request, response) =>
   listUserUseCase.execute(request, response)
 );
 
+usersRoutes.post("/", (request, response) =>
+  listUserUseCase.execute(request, response)
+);
 
 
 export { usersRoutes };

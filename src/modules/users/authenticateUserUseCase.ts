@@ -34,7 +34,6 @@ class AuthenticaUserUseCase{
         const resp: IUserTokenDTO = {
             user:{
                 userName: user.userName,
-                password: user.password,
             },
             token: token,
         };

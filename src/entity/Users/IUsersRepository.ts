@@ -18,7 +18,6 @@ interface IAuthenticateUserDTO{
 interface IUserTokenDTO{
   user:{
     userName:string,
-    password:string,  
   },
   token: string,
 }

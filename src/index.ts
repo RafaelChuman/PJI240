@@ -16,10 +16,13 @@ app.use(express.json());
 
 
 app.use(authenticateRoutes);
+
+app.use(ensureAuthenticated);
+
 app.use("/users", usersRoutes);
 
 //Midleware para validar a autenticação de todas as rotas seguintes
-app.use(ensureAuthenticated);
+
 
 app.use("/products", productsRoutes);
 app.use("/categories", categoriesRoutes);

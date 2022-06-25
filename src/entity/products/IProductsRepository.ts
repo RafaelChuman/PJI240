@@ -6,7 +6,7 @@ interface ICreateProductDTO {
   numberStocke:number;
   image:string;
   quantityValue:number;
-  quantityUnit:string,
+  quantityUnit:"ml" | "l" | "g" | "Kg" | "und",
   value:number;
 }
 

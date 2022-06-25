@@ -28,7 +28,7 @@ class AuthenticaUserUseCase{
 
         const token = sign({}, "brasil123", {
             subject: user.id,
-            expiresIn: "20s"            
+            expiresIn: "10h"            
         })
 
         const resp: IUserTokenDTO = {

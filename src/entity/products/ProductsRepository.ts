@@ -24,9 +24,12 @@ class ProductRepository implements IProductsRepository{
   }
 
   async list(): Promise<Products[]> {
-    const products = await PostgresDS.manager.find(Products);
+    //const products = await PostgresDS.manager.find(Products);
+    const query = PostgresDS.manager.createQueryBuilder<Products>('Products', 'p').innerJoinAndSelect('p.category', 'w'); // 'w.userId = u.id' may be omitted
+    
+    const result = await query.getMany();
 
-    return products;
+    return result;
   }
 }
 

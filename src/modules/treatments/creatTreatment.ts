@@ -9,11 +9,10 @@ export class CreateTreatment{
 
         const treatmentsRespository = new TreatmentsRepository();
         const datas:ICreatTreatmentDTO[] = request.body.products;
-        const newId = uuidv4(); 
 
         datas.forEach(async data => {
             const newTreatment:ICreatTreatmentDTO = {
-                treatmentsId:               newId,
+                treatmentsId:               request.body.treatmentsId,
                 uersId:                     request.body.usersId,
                 productsId:                 data.productsId,
                 quantityOfProduct:          data.quantityOfProduct,

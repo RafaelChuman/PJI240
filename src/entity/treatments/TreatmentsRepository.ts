@@ -38,7 +38,9 @@ export class TreatmentsRepository implements ITreatmentsRepository{
     }
 
     async listTreatment(): Promise<Treatments[]|undefined> {
-        const treatments = await PostgresDS.manager.find(Treatments);
+        //const treatments = await PostgresDS.manager.find(Treatments);
+        const query = PostgresDS.manager.createQueryBuilder<Treatments>('Treatments', 't').innerJoinAndSelect('t.products', 'p').innerJoinAndSelect('t.users', 'u'); // 'w.userId = u.id' may be omitted
+        const treatments = await query.getMany();
 
         return treatments;
     }

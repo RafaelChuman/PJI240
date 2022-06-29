@@ -29,6 +29,7 @@ interface IUsersRepository {
   // turnAdmin(user: User): User;
   list(): Promise<Users[]>;
   findById(IdParm: string): Promise<Users | null>;
+  listAllUsersGroupedByMonth(): Promise<Users[]>;
 }
 
 export { IUsersRepository, ICreateUserDTO, IAuthenticateUserDTO, IUserTokenDTO };

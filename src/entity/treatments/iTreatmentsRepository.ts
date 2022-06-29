@@ -26,6 +26,8 @@ interface ITreatmentsRepository{
     listTreatmentById(data: IListTreatmentById): Promise<Treatments | null>;
     listTreatmentByUserId(data: IListTreatmentById): Promise<Treatments[] | null>;
     deleteTreatmentById(data: IDeleteTreatmentDTO): Promise<DeleteResult>;
+    listAllTreatmentsGroupedByMonth(): Promise<Treatments[]>;
+    listAllTreatmentsProductToBuy(data:Date): Promise<Treatments[]>;
     
 };
 
